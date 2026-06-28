@@ -530,7 +530,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <div class="cover-seal">🎓</div>
         <div class="cover-line"></div>
         <h1 class="cover-title">Libreta<br>Universitaria</h1>
-        <p class="cover-sub">27 jun 2026 · 19:46</p>
+        <p class="cover-sub">28 jun 2026 · 16:13</p>
         <div class="cover-line"></div>
         <div class="cover-stats">
           <div class="cstat"><div class="cn" data-count="26">0</div><div class="cl">Total</div></div>
@@ -1429,16 +1429,16 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     </div>
   </div></div>
 </article></div></div></div>
-<div class="bpage" id="pg-calendario"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Calendario</span></div><div class="ag-timeline"><div class="ag-item ag-proximo"><div class="ag-dot"></div><div class="ag-date"><span class="ag-day">30</span><span class="ag-mon">jun</span></div><div class="ag-info"><span class="ag-tit">parcial 12</span><span class="ag-mat">Manuel Freytes</span></div><span class="ag-cnt ag-cnt-proximo">En 3 días</span></div></div></div></div>
+<div class="bpage" id="pg-calendario"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Calendario</span></div><div class="ag-timeline"><div class="ag-item ag-urgente"><div class="ag-dot"></div><div class="ag-date"><span class="ag-day">30</span><span class="ag-mon">jun</span></div><div class="ag-info"><span class="ag-tit">parcial 12</span><span class="ag-mat">Manuel Freytes</span></div><span class="ag-cnt ag-cnt-urgente">En 2 días</span></div></div></div></div>
 <div class="bpage" id="pg-asistencias"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Asistencias</span><span class="pg-count">2 en curso</span></div><div id="sync-badge" class="sync-badge sync-ok">✓ Todo sincronizado</div><div class="asist-nota"><strong>¿Cómo funciona?</strong> Marcá cada clase —presente o ausente— y el registro queda guardado en el celular aunque la compu esté apagada. Cuando la compu esté activa, todo se sincroniza automático.</div><div class="asist-card" data-mat="MANUEL_FREYTES">
   <div class="asist-top">
-    <div class="asist-pct pct-bad" id="pct-MANUEL_FREYTES">0%</div>
+    <div class="asist-pct pct-warn" id="pct-MANUEL_FREYTES">50%</div>
     <div class="asist-info">
       <div class="asist-nom">Manuel Freytes</div>
-      <div class="asist-stats" id="stats-MANUEL_FREYTES">0&nbsp;pres · 1&nbsp;aus · 1&nbsp;clase</div>
+      <div class="asist-stats" id="stats-MANUEL_FREYTES">1&nbsp;pres · 1&nbsp;aus · 2&nbsp;clases</div>
     </div>
   </div>
-  <div class="ah-hist" id="hist-MANUEL_FREYTES"><span class="ah-item ah-no">✗ 26/06/2026</span></div>
+  <div class="ah-hist" id="hist-MANUEL_FREYTES"><span class="ah-item ah-no">✗ 26/06/2026</span><span class="ah-item ah-ok">✓ 25/06/2026</span></div>
   <div class="asist-btns">
     <button class="asist-btn btn-pres" onclick="marcarAsist('MANUEL_FREYTES',true,this)">✓&nbsp;Presente</button>
     <button class="asist-btn btn-aus"  onclick="marcarAsist('MANUEL_FREYTES',false,this)">✗&nbsp;Ausente</button>
@@ -1905,7 +1905,9 @@ function _actualizarCardCompleta(slug, datos){
   var pctEl = document.getElementById('pct-'+slug);
   var stEl  = document.getElementById('stats-'+slug);
   if(!hist||!pctEl||!stEl) return;
-  var entradas = Object.keys(datos).map(function(f){ return {fecha:f, asistio:datos[f]}; });
+  var entradas = Object.keys(datos||{}).map(function(f){ return {fecha:f, asistio:datos[f]}; });
+  /* no tocar el DOM si Supabase no tiene datos para esta materia todavía */
+  if(!entradas.length) return;
   entradas.sort(function(a,b){ return _parseFecha(b.fecha)-_parseFecha(a.fecha); });
   hist.innerHTML = '';
   if(!entradas.length){
@@ -1946,16 +1948,16 @@ function marcarAsist(materia, asistio, btn){
 
   /* 3. PATCH JSONB completo a Supabase (igual que la hermana) */
   _actualizarBadge(false);
-  var payload={materia:materia, dados:_estadoMat[materia], updated_at:new Date().toISOString()};
-  if(USERNAME) payload.username=USERNAME;
   var onConflict=USERNAME?'username,materia':'materia';
+  var bodyObj={materia:materia, datos:_estadoMat[materia], updated_at:new Date().toISOString()};
+  if(USERNAME) bodyObj.username=USERNAME;
   fetch(SUPA_URL+'/rest/v1/asistencias_v2?on_conflict='+onConflict,{
     method:'POST',
     headers:{
       'apikey':SUPA_KEY,'Authorization':'Bearer '+SUPA_KEY,
       'Content-Type':'application/json','Prefer':'resolution=merge-duplicates'
     },
-    body:JSON.stringify({materia:materia, datos:_estadoMat[materia], updated_at:new Date().toISOString(), username:USERNAME||undefined})
+    body:JSON.stringify(bodyObj)
   })
   .then(function(r){
     _actualizarBadge(r.ok||r.status===201||r.status===204);
