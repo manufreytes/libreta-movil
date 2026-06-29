@@ -214,7 +214,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 
 .pg-header{
   position:sticky;top:0;z-index:20;
-  display:flex;align-items:center;gap:12px;padding:14px 18px;
+  display:flex;align-items:center;gap:12px;padding:14px 18px 14px 28px;
   background:rgba(13,18,32,.92);backdrop-filter:blur(12px);
   border-bottom:1px solid var(--border);
 }
@@ -235,7 +235,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 /* ── índice ── */
 #pg-index{background:var(--page)}
 .idx-inner{
-  flex:1;overflow-y:auto;padding:24px 20px;
+  flex:1;overflow-y:auto;padding:24px 20px 24px 28px;
   display:flex;flex-direction:column;gap:10px;
 }
 .idx-inner::-webkit-scrollbar{width:4px}
@@ -277,7 +277,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .cards-grid{
   display:grid;
   grid-template-columns:repeat(2,1fr);
-  gap:12px;padding:14px 14px 0;
+  gap:12px;padding:14px 14px 0 28px;
 }
 .card{perspective:1300px}
 .card.hidden-by-filter{display:none!important}
@@ -370,7 +370,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .bdg-year {color:var(--dim);background:transparent;border:1px solid var(--border2)}
 
 /* ── agenda en libro ── */
-.ag-timeline{padding:12px 16px;position:relative}
+.ag-timeline{padding:12px 16px 12px 28px;position:relative}
 .ag-timeline::before{content:"";position:absolute;left:22px;top:18px;bottom:18px;width:1px;
   background:linear-gradient(to bottom,rgba(99,102,241,.4),transparent)}
 .ag-item{display:flex;align-items:center;gap:10px;padding:9px 0}
@@ -509,7 +509,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 /* ══════════════════════════════════════════
    PROMEDIOS
 ══════════════════════════════════════════ */
-.pbar-lista{padding:16px;display:flex;flex-direction:column;gap:14px}
+.pbar-lista{padding:16px 16px 16px 28px;display:flex;flex-direction:column;gap:14px}
 .pbar-anio{
   font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.8rem;
   color:var(--gold2);letter-spacing:.1em;text-transform:uppercase;
@@ -539,7 +539,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   font-weight:700;color:#fff;
 }
 .prom-resumen{
-  margin:12px 16px 0;padding:12px;border-radius:10px;
+  margin:12px 16px 0 28px;padding:12px;border-radius:10px;
   background:rgba(99,102,241,.07);border:1px solid rgba(99,102,241,.2);
   display:flex;gap:20px;justify-content:center;
 }
@@ -553,7 +553,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 /* ══════════════════════════════════════════
    FORMULARIO AGREGAR / EDITAR
 ══════════════════════════════════════════ */
-.form-body{padding:16px;display:flex;flex-direction:column;gap:12px}
+.form-body{padding:16px 16px 16px 28px;display:flex;flex-direction:column;gap:12px}
 .form-campo{display:flex;flex-direction:column;gap:4px}
 .form-lbl{font-size:.72rem;color:var(--dim);letter-spacing:.06em;text-transform:uppercase}
 .form-inp,.form-sel{
@@ -658,7 +658,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <div class="cover-seal">🎓</div>
         <div class="cover-line"></div>
         <h1 class="cover-title">Libreta<br>Universitaria</h1>
-        <p class="cover-sub">29 jun 2026 · 18:01</p>
+        <p class="cover-sub">29 jun 2026 · 18:09</p>
         <div class="cover-line"></div>
         <div class="cover-stats">
           <div class="cstat"><div class="cn" data-count="24">0</div><div class="cl">Total</div></div>
@@ -957,40 +957,6 @@ button{font:inherit;cursor:pointer;border:none;background:none}
       </div>
       <div class="card-body">
         <span class="card-ey">Asignatura</span>
-        <h3 class="card-nom">Matematica</h3>
-        <div class="card-bdgs">
-          <span class="badge bdg-ok">Aprobada</span><span class="badge bdg-year">1º Año</span>
-        </div>
-      </div>
-      <span class="fhint" aria-hidden="true">↻</span>
-    </div>
-    <div class="face back">
-      <div class="shimmer"></div>
-      <div class="back-top">
-        <div><span class="card-ey">Detalle</span><h3 class="card-nom">Matematica</h3></div>
-        <span class="badge bdg-ok">Aprobada</span>
-      </div>
-      <div class="sep"></div>
-      <div class="dgrid"><span class="dl">Nota final</span><span class="dv">—</span></div>
-      <span class="fhint" aria-hidden="true">↻</span>
-      <button class="card-edit-btn" onclick="event.stopPropagation();abrirModal('MATEMATICA','Matematica')">✏ Editar nota</button>
-    </div>
-  </div></div>
-</article><article class="card" tabindex="0" data-estado="aprobada">
-  <div class="card-tilt"><div class="card-flip">
-    <div class="face front">
-      <div class="shimmer"></div>
-      <div class="ring-center">
-        <div class="card-ring rdim" style="--df:188.5;--do:188.5;">
-          <svg viewBox="0 0 68 68" aria-hidden="true">
-            <circle class="ring-bg"  cx="34" cy="34" r="30"/>
-            <circle class="ring-val" cx="34" cy="34" r="30"/>
-          </svg>
-          <span class="ring-nota">—</span>
-        </div>
-      </div>
-      <div class="card-body">
-        <span class="card-ey">Asignatura</span>
         <h3 class="card-nom">Fisica</h3>
         <div class="card-bdgs">
           <span class="badge bdg-ok">Aprobada</span><span class="badge bdg-year">1º Año</span>
@@ -1008,6 +974,40 @@ button{font:inherit;cursor:pointer;border:none;background:none}
       <div class="dgrid"><span class="dl">Nota final</span><span class="dv">—</span></div>
       <span class="fhint" aria-hidden="true">↻</span>
       <button class="card-edit-btn" onclick="event.stopPropagation();abrirModal('FISICA','Fisica')">✏ Editar nota</button>
+    </div>
+  </div></div>
+</article><article class="card" tabindex="0" data-estado="aprobada">
+  <div class="card-tilt"><div class="card-flip">
+    <div class="face front">
+      <div class="shimmer"></div>
+      <div class="ring-center">
+        <div class="card-ring rdim" style="--df:188.5;--do:188.5;">
+          <svg viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="ring-bg"  cx="34" cy="34" r="30"/>
+            <circle class="ring-val" cx="34" cy="34" r="30"/>
+          </svg>
+          <span class="ring-nota">—</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-ey">Asignatura</span>
+        <h3 class="card-nom">Matematica</h3>
+        <div class="card-bdgs">
+          <span class="badge bdg-ok">Aprobada</span><span class="badge bdg-year">1º Año</span>
+        </div>
+      </div>
+      <span class="fhint" aria-hidden="true">↻</span>
+    </div>
+    <div class="face back">
+      <div class="shimmer"></div>
+      <div class="back-top">
+        <div><span class="card-ey">Detalle</span><h3 class="card-nom">Matematica</h3></div>
+        <span class="badge bdg-ok">Aprobada</span>
+      </div>
+      <div class="sep"></div>
+      <div class="dgrid"><span class="dl">Nota final</span><span class="dv">—</span></div>
+      <span class="fhint" aria-hidden="true">↻</span>
+      <button class="card-edit-btn" onclick="event.stopPropagation();abrirModal('MATEMATICA','Matematica')">✏ Editar nota</button>
     </div>
   </div></div>
 </article><article class="card" tabindex="0" data-estado="aprobada">
@@ -1538,21 +1538,23 @@ button{font:inherit;cursor:pointer;border:none;background:none}
             <div id="msg-agregar" class="form-msg"></div>
             <div class="form-campo">
               <label class="form-lbl">Nombre de la materia</label>
-              <input id="ag-nombre" class="form-inp" type="text" placeholder="Ej: Análisis Matemático I" autocomplete="off">
+              <input id="ag-nombre" class="form-inp" type="text" placeholder="Ej: ANALISIS_MATEMATICO_1" autocomplete="off">
             </div>
             <div class="form-row">
               <div class="form-campo">
                 <label class="form-lbl">Año</label>
                 <select id="ag-anio" class="form-sel">
                   <option>1º Año</option><option>2º Año</option><option>3º Año</option>
-                  <option>4º Año</option><option>5º Año</option><option>6º Año</option>
+                  <option>4º Año</option><option>5º Año</option><option>Optativa</option>
                 </select>
               </div>
               <div class="form-campo">
-                <label class="form-lbl">Tipo</label>
-                <select id="ag-tipo" class="form-sel">
-                  <option>Promocional</option><option>Regular</option>
-                  <option>Coloquio</option><option>Sin Nota</option>
+                <label class="form-lbl">Modalidad</label>
+                <select id="ag-tipo" class="form-sel" onchange="agTipoChange(this.value)">
+                  <option value="Final">Final</option>
+                  <option value="Promocional">Promocional</option>
+                  <option value="Coloquio">Coloquio</option>
+                  <option value="Sin Nota">Sin Nota</option>
                 </select>
               </div>
             </div>
@@ -1560,18 +1562,21 @@ button{font:inherit;cursor:pointer;border:none;background:none}
               <div class="form-campo">
                 <label class="form-lbl">Estado</label>
                 <select id="ag-estado" class="form-sel">
-                  <option value="en_curso">En curso</option>
+                  <option value="en_curso">En Curso</option>
                   <option value="aprobada">Aprobada</option>
                   <option value="desaprobada">Desaprobada</option>
-                  <option value="pendiente">Pendiente</option>
                 </select>
               </div>
-              <div class="form-campo">
-                <label class="form-lbl">Nota final</label>
+              <div class="form-campo" id="ag-nota-wrap">
+                <label class="form-lbl" id="ag-nota-lbl">Nota del Examen Final</label>
                 <input id="ag-nota" class="form-inp" type="number" min="0" max="10" step="0.5" placeholder="—">
               </div>
             </div>
-            <div class="form-campo">
+            <div class="form-campo" id="ag-prom-wrap" style="display:none">
+              <label class="form-lbl">Nota mínima de promoción</label>
+              <input id="ag-notaprom" class="form-inp" type="number" min="0" max="10" step="0.5" placeholder="7 (por defecto)">
+            </div>
+            <div class="form-campo" id="ag-parc-wrap">
               <label class="form-lbl">Parciales (separados por coma)</label>
               <input id="ag-parciales" class="form-inp" type="text" placeholder="Ej: 7, 8.5">
             </div>
@@ -1579,7 +1584,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
               Guardar materia
             </button>
             <p style="font-size:.7rem;color:var(--dim);text-align:center;margin-top:4px">
-              Se sincroniza automáticamente con la computadora
+              Se sincroniza con la computadora al regenerar la página
             </p>
           </div>
         </div>
@@ -2210,6 +2215,10 @@ window.marcarAsist = marcarAsist;
         <label class="form-lbl">Parciales (separados por coma)</label>
         <input id="ed-parciales" class="form-inp" type="text" placeholder="Ej: 7, 8.5">
       </div>
+      <div class="form-campo" id="ed-prom-wrap" style="display:none">
+        <label class="form-lbl">Nota mínima de promoción</label>
+        <input id="ed-notaprom" class="form-inp" type="number" min="0" max="10" step="0.5" placeholder="7">
+      </div>
       <button class="btn-submit" id="btn-ed-submit" onclick="submitEditar()">
         Guardar cambios
       </button>
@@ -2224,7 +2233,7 @@ window.marcarAsist = marcarAsist;
 var SUPA_URL_CRUD = 'https://hufflxvocbfbhrayylad.supabase.co';
 var SUPA_KEY_CRUD = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1ZmZseHZvY2JmYmhyYXl5bGFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0OTc2ODUsImV4cCI6MjA5ODA3MzY4NX0.MVqKYtuKeOlT4jgx13sTT2lZ2tuzChEmLLQMCe1xzG4';
 var USERNAME_CRUD = 'manufreytes';
-var _datosCache   = {"ALGEBRA_LINEAL": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 8], "final": 8.0, "año": "1º Año"}, "ANATOMIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [], "final": 9.0, "año": "2º Año"}, "ANALISIS_MATEMATICO_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 10], "final": 10.0, "año": "1º Año"}, "ANALISIS_MATEMATICO_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 4], "final": 7.0, "año": "2º Año"}, "ANALISIS_MATEMATICO_3": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9], "final": 10.0, "año": "2º Año"}, "ELECTROTECNIA_GENERAL_Y_MAQUINAS_ELECTRICAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 9.0, "año": "3º Año"}, "ELECTRONICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8], "final": 9.0, "año": "2º Año"}, "ELECTRONICA_DIGITAL_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 8.8, "año": "3º Año"}, "ESTATICA_Y_RESISTENCA_DE_LOS_MATERIALES": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8.3], "final": 9.0, "año": "2º Año"}, "FISIOLOGIA_HUMANA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 9.0, "año": "3º Año"}, "FISICA_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 7, 4, 10], "final": 9.0, "año": "1º Año"}, "FISICA_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9, 8, 7], "final": 6.0, "año": "2º Año"}, "HISTOLOGIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9, 9], "final": 9.0, "año": "2º Año"}, "INFORMATICA_Y_CALCULO_NUMERICO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8, 10, 10, 10], "final": 9.0, "año": "2º Año"}, "PROBABILIDAD_Y_ESTADISTICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9.0, "año": "2º Año"}, "QUIMICA_ORGANICA_Y_BIOLOGICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [5, 8, 7], "final": 7.0, "año": "1º Año"}, "QUIMICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [7, 9], "final": 8.0, "año": "1º Año"}, "SENALES_Y_SISTEMAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9.0, "año": "3º Año"}, "SISTEMAS_DE_REPRESENTACION": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [4, 6], "final": 6.0, "año": "1º Año"}, "TALLER_Y_LABORATORIO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 8.5, "año": "1º Año"}, "INGLES": {"tipo": "Sin Nota", "estado": "aprobada", "año": "2º Año"}, "MATEMATICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "FISICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INTRODUCCION A LA VIDA UNIVERSITARIA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}};   /* datos actuales inyectados por Python */
+var _datosCache   = {"ALGEBRA_LINEAL": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 8], "final": 8.0, "año": "1º Año"}, "ANATOMIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [], "final": 9.0, "año": "2º Año"}, "ANALISIS_MATEMATICO_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 10], "final": 10.0, "año": "1º Año"}, "ANALISIS_MATEMATICO_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 4], "final": 7.0, "año": "2º Año"}, "ANALISIS_MATEMATICO_3": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9], "final": 10.0, "año": "2º Año"}, "ELECTROTECNIA_GENERAL_Y_MAQUINAS_ELECTRICAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 9.0, "año": "3º Año"}, "ELECTRONICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8], "final": 9.0, "año": "2º Año"}, "ELECTRONICA_DIGITAL_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 8.8, "año": "3º Año"}, "ESTATICA_Y_RESISTENCA_DE_LOS_MATERIALES": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8.3], "final": 9.0, "año": "2º Año"}, "FISIOLOGIA_HUMANA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 9.0, "año": "3º Año"}, "FISICA_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 7, 4, 10], "final": 9.0, "año": "1º Año"}, "FISICA_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9, 8, 7], "final": 6.0, "año": "2º Año"}, "HISTOLOGIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9, 9], "final": 9.0, "año": "2º Año"}, "INFORMATICA_Y_CALCULO_NUMERICO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8, 10, 10, 10], "final": 9.0, "año": "2º Año"}, "PROBABILIDAD_Y_ESTADISTICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9.0, "año": "2º Año"}, "QUIMICA_ORGANICA_Y_BIOLOGICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [5, 8, 7], "final": 7.0, "año": "1º Año"}, "QUIMICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [7, 9], "final": 8.0, "año": "1º Año"}, "SENALES_Y_SISTEMAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9.0, "año": "3º Año"}, "SISTEMAS_DE_REPRESENTACION": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [4, 6], "final": 6.0, "año": "1º Año"}, "TALLER_Y_LABORATORIO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 8.5, "año": "1º Año"}, "FISICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INGLES": {"tipo": "Sin Nota", "estado": "aprobada", "año": "2º Año"}, "MATEMATICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INTRODUCCION A LA VIDA UNIVERSITARIA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}};   /* datos actuales inyectados por Python */
 
 function _supaHeaders(){
   return {
@@ -2248,32 +2257,55 @@ function _guardarEnSupabase(datos, callback){
   }).catch(function(){ if(callback) callback(false); });
 }
 
+/* ── Visibilidad dinámica del tipo en agregar ── */
+function agTipoChange(tipo){
+  var wrapProm  = document.getElementById('ag-prom-wrap');
+  var wrapNota  = document.getElementById('ag-nota-wrap');
+  var wrapParc  = document.getElementById('ag-parc-wrap');
+  var lblNota   = document.getElementById('ag-nota-lbl');
+  var sinNota   = tipo === 'Sin Nota';
+  wrapNota.style.display  = sinNota ? 'none' : '';
+  wrapParc.style.display  = sinNota ? 'none' : '';
+  wrapProm.style.display  = (tipo === 'Promocional' || tipo === 'Coloquio') ? '' : 'none';
+  if(tipo === 'Promocional') lblNota.textContent = 'Nota Final (vacío = promedio parciales)';
+  else if(tipo === 'Coloquio') lblNota.textContent = 'Nota del Coloquio';
+  else lblNota.textContent = 'Nota del Examen Final';
+}
+
 /* ── Agregar materia ── */
 function submitAgregar(){
-  var nombre = document.getElementById('ag-nombre').value.trim();
+  var nombre = document.getElementById('ag-nombre').value.trim().toUpperCase().replace(/\s+/g,'_');
   if(!nombre){ _msgAgregar('Ingresá el nombre de la materia.','err'); return; }
-  var slug   = nombre.toLowerCase().replace(/\s+/g,'_').replace(/[^a-z0-9_]/g,'');
+  var slug   = nombre.toLowerCase();
   if(_datosCache[slug]){ _msgAgregar('Ya existe una materia con ese nombre.','err'); return; }
-  var nota   = parseFloat(document.getElementById('ag-nota').value) || null;
-  var parcs  = document.getElementById('ag-parciales').value
+  var tipo   = document.getElementById('ag-tipo').value;
+  var sinNota = tipo === 'Sin Nota';
+  var nota   = sinNota ? null : (parseFloat(document.getElementById('ag-nota').value) || 0);
+  var parcs  = sinNota ? [] : (document.getElementById('ag-parciales').value
                  .split(',').map(function(s){ return parseFloat(s.trim()); })
-                 .filter(function(n){ return !isNaN(n); });
-  _datosCache[slug] = {
+                 .filter(function(n){ return !isNaN(n); }));
+  var notaProm = parseFloat(document.getElementById('ag-notaprom').value) || 7.0;
+  var entry = {
     año:     document.getElementById('ag-anio').value,
-    tipo:    document.getElementById('ag-tipo').value,
+    tipo:    tipo,
     estado:  document.getElementById('ag-estado').value,
-    final:   nota,
-    parciales: parcs,
-    asistencias: []
+    asistencias: {}
   };
+  if(!sinNota){
+    entry.parciales     = parcs;
+    entry.final         = nota;
+    entry.nota_promocion = notaProm;
+  }
+  _datosCache[slug] = entry;
   var btn = document.getElementById('btn-ag-submit');
   btn.disabled = true; btn.textContent = 'Guardando…';
   _guardarEnSupabase(_datosCache, function(ok){
     btn.disabled = false; btn.textContent = 'Guardar materia';
     if(ok){
-      _msgAgregar('¡Materia guardada! Se sincroniza cuando abras la app.','ok');
-      document.getElementById('ag-nombre').value = '';
-      document.getElementById('ag-nota').value   = '';
+      _msgAgregar('¡' + nombre.replace(/_/g,' ') + ' guardada!','ok');
+      document.getElementById('ag-nombre').value    = '';
+      document.getElementById('ag-nota').value      = '';
+      document.getElementById('ag-notaprom').value  = '';
       document.getElementById('ag-parciales').value = '';
     } else {
       _msgAgregar('Error al guardar. Verificá tu conexión.','err');
@@ -2287,13 +2319,17 @@ function _msgAgregar(txt,tipo){
 
 /* ── Editar materia ── */
 function abrirModal(slug, nombre){
-  var info = _datosCache[slug] || {};
-  document.getElementById('ed-slug').value      = slug;
-  document.getElementById('modal-tit').textContent = nombre || slug;
-  document.getElementById('ed-estado').value    = info.estado || 'en_curso';
-  document.getElementById('ed-nota').value      = info.final || '';
-  document.getElementById('ed-parciales').value = (info.parciales||[]).join(', ');
-  document.getElementById('msg-editar').className = 'form-msg';
+  var info  = _datosCache[slug] || {};
+  var tipo  = info.tipo || '';
+  var esProm = tipo === 'Promocional' || tipo === 'Coloquio';
+  document.getElementById('ed-slug').value         = slug;
+  document.getElementById('modal-tit').textContent = nombre || slug.replace(/_/g,' ');
+  document.getElementById('ed-estado').value       = info.estado || 'en_curso';
+  document.getElementById('ed-nota').value         = info.final != null && info.final !== 0 ? info.final : '';
+  document.getElementById('ed-parciales').value    = (info.parciales||[]).join(', ');
+  document.getElementById('ed-prom-wrap').style.display = esProm ? '' : 'none';
+  document.getElementById('ed-notaprom').value     = esProm ? (info.nota_promocion || 7) : '';
+  document.getElementById('msg-editar').className  = 'form-msg';
   document.getElementById('modal-editar').classList.add('open');
 }
 function cerrarModal(){
@@ -2304,15 +2340,20 @@ document.getElementById('modal-editar').addEventListener('click', function(e){
 });
 
 function submitEditar(){
-  var slug  = document.getElementById('ed-slug').value;
-  var nota  = parseFloat(document.getElementById('ed-nota').value) || null;
-  var parcs = document.getElementById('ed-parciales').value
-                .split(',').map(function(s){ return parseFloat(s.trim()); })
-                .filter(function(n){ return !isNaN(n); });
+  var slug     = document.getElementById('ed-slug').value;
+  var nota     = parseFloat(document.getElementById('ed-nota').value) || 0;
+  var notaProm = parseFloat(document.getElementById('ed-notaprom').value) || 7.0;
+  var parcs    = document.getElementById('ed-parciales').value
+                   .split(',').map(function(s){ return parseFloat(s.trim()); })
+                   .filter(function(n){ return !isNaN(n); });
   if(!_datosCache[slug]) _datosCache[slug] = {};
-  _datosCache[slug].estado   = document.getElementById('ed-estado').value;
-  _datosCache[slug].final    = nota;
+  var tipo = (_datosCache[slug].tipo || '');
+  _datosCache[slug].estado    = document.getElementById('ed-estado').value;
+  _datosCache[slug].final     = nota;
   _datosCache[slug].parciales = parcs;
+  if(tipo === 'Promocional' || tipo === 'Coloquio'){
+    _datosCache[slug].nota_promocion = notaProm;
+  }
   var btn = document.getElementById('btn-ed-submit');
   btn.disabled = true; btn.textContent = 'Guardando…';
   _guardarEnSupabase(_datosCache, function(ok){
@@ -2334,6 +2375,7 @@ window.submitAgregar = submitAgregar;
 window.submitEditar  = submitEditar;
 window.abrirModal    = abrirModal;
 window.cerrarModal   = cerrarModal;
+window.agTipoChange  = agTipoChange;
 </script>
 <script>
 if('serviceWorker' in navigator){
