@@ -673,12 +673,12 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <div class="cover-seal">🎓</div>
         <div class="cover-line"></div>
         <h1 class="cover-title">Libreta<br>Universitaria</h1>
-        <p class="cover-sub">29 jun 2026 · 18:16</p>
+        <p class="cover-sub">29 jun 2026 · 18:35</p>
         <div class="cover-line"></div>
         <div class="cover-stats">
-          <div class="cstat"><div class="cn" data-count="25">0</div><div class="cl">Total</div></div>
+          <div class="cstat"><div class="cn" data-count="27">0</div><div class="cl">Total</div></div>
           <div class="cstat"><div class="cn cn-ok" data-count="24">0</div><div class="cl">Aprobadas</div></div>
-          <div class="cstat"><div class="cn cn-b" data-count="1">0</div><div class="cl">En curso</div></div>
+          <div class="cstat"><div class="cn cn-b" data-count="3">0</div><div class="cl">En curso</div></div>
           <div class="cstat"><div class="cn cn-g" id="prom-cover">8.46</div><div class="cl">Promedio</div></div>
         </div>
         <button class="btn-open" onclick="goPage('pg-index')">Abrir libro →</button>
@@ -692,6 +692,8 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 <button class="idx-btn" onclick="goPage('pg-2año')"><span class="idx-yr">2º Año</span><span class="idx-st">10 materias · 10 aprobadas</span><span class="idx-arr">→</span></button>
 <button class="idx-btn" onclick="goPage('pg-3año')"><span class="idx-yr">3º Año</span><span class="idx-st">4 materias · 4 aprobadas</span><span class="idx-arr">→</span></button>
 <button class="idx-btn" onclick="goPage('pg-4año')"><span class="idx-yr">4º Año</span><span class="idx-st">1 materias · 0 aprobadas</span><span class="idx-arr">→</span></button>
+<button class="idx-btn" onclick="goPage('pg-5año')"><span class="idx-yr">5º Año</span><span class="idx-st">1 materias · 0 aprobadas</span><span class="idx-arr">→</span></button>
+<button class="idx-btn" onclick="goPage('pg-optativa')"><span class="idx-yr">Optativa</span><span class="idx-st">1 materias · 0 aprobadas</span><span class="idx-arr">→</span></button>
           <div class="idx-sep"></div>
           <button class="idx-btn asist-idx-btn" onclick="goPage('pg-asistencias')">
             <span class="idx-yr" style="color:#818cf8">📋 Asistencias</span>
@@ -1574,9 +1576,79 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     </div>
   </div></div>
 </article></div></div></div>
+<div class="bpage" id="pg-5año"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">5º Año</span><span class="pg-count">1 materia</span></div><div class="cards-grid"><article class="card" tabindex="0" data-estado="en_curso">
+  <div class="card-tilt"><div class="card-flip">
+    <div class="face front">
+      <div class="shimmer"></div>
+      <div class="ring-center">
+        <div class="card-ring rdim" style="--df:188.5;--do:188.5;">
+          <svg viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="ring-bg"  cx="34" cy="34" r="30"/>
+            <circle class="ring-val" cx="34" cy="34" r="30"/>
+          </svg>
+          <span class="ring-nota">—</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-ey">Asignatura</span>
+        <h3 class="card-nom">Manuel5</h3>
+        <div class="card-bdgs">
+          <span class="badge bdg-curso">En curso</span><span class="badge bdg-year">5º Año</span>
+        </div>
+      </div>
+      <span class="fhint" aria-hidden="true">↻</span>
+    </div>
+    <div class="face back">
+      <div class="shimmer"></div>
+      <div class="back-top">
+        <div><span class="card-ey">Detalle</span><h3 class="card-nom">Manuel5</h3></div>
+        <span class="badge bdg-curso">En curso</span>
+      </div>
+      <div class="sep"></div>
+      <div class="dgrid"><span class="dl">Modalidad</span><span class="dv">Final</span><span class="dl">Nota final</span><span class="dv">—</span></div>
+      <span class="fhint" aria-hidden="true">↻</span>
+      <button class="card-edit-btn" onclick="event.stopPropagation();abrirModal('manuel5','Manuel5')">✏ Editar nota</button>
+    </div>
+  </div></div>
+</article></div></div></div>
+<div class="bpage" id="pg-optativa"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Optativa</span><span class="pg-count">1 materia</span></div><div class="cards-grid"><article class="card" tabindex="0" data-estado="en_curso">
+  <div class="card-tilt"><div class="card-flip">
+    <div class="face front">
+      <div class="shimmer"></div>
+      <div class="ring-center">
+        <div class="card-ring rdim" style="--df:188.5;--do:188.5;">
+          <svg viewBox="0 0 68 68" aria-hidden="true">
+            <circle class="ring-bg"  cx="34" cy="34" r="30"/>
+            <circle class="ring-val" cx="34" cy="34" r="30"/>
+          </svg>
+          <span class="ring-nota">—</span>
+        </div>
+      </div>
+      <div class="card-body">
+        <span class="card-ey">Asignatura</span>
+        <h3 class="card-nom">Manuel6</h3>
+        <div class="card-bdgs">
+          <span class="badge bdg-curso">En curso</span><span class="badge bdg-year">Optativa</span>
+        </div>
+      </div>
+      <span class="fhint" aria-hidden="true">↻</span>
+    </div>
+    <div class="face back">
+      <div class="shimmer"></div>
+      <div class="back-top">
+        <div><span class="card-ey">Detalle</span><h3 class="card-nom">Manuel6</h3></div>
+        <span class="badge bdg-curso">En curso</span>
+      </div>
+      <div class="sep"></div>
+      <div class="dgrid"><span class="dl">Modalidad</span><span class="dv">Final</span><span class="dl">Nota final</span><span class="dv">—</span></div>
+      <span class="fhint" aria-hidden="true">↻</span>
+      <button class="card-edit-btn" onclick="event.stopPropagation();abrirModal('manuel6','Manuel6')">✏ Editar nota</button>
+    </div>
+  </div></div>
+</article></div></div></div>
 <div class="bpage" id="pg-calendario"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Calendario</span></div><div class="ag-timeline"><p class="no-ev">No hay evaluaciones registradas.</p></div>
 <div class="parc-section">
-  <div class="parc-sec-title">📝 Cargar resultado de parcial</div>
+  <div class="parc-sec-title">📅 Agregar evaluación al calendario</div>
   <div id="msg-parcial" class="form-msg"></div>
   <div class="form-campo">
     <label class="form-lbl">Materia</label>
@@ -1586,18 +1658,28 @@ button{font:inherit;cursor:pointer;border:none;background:none}
   </div>
   <div class="form-row" style="margin-top:10px">
     <div class="form-campo">
-      <label class="form-lbl">Nota obtenida</label>
-      <input id="parc-nota" class="form-inp" type="number" min="0" max="10" step="0.5" placeholder="Ej: 7.5">
+      <label class="form-lbl">Tipo de evaluación</label>
+      <select id="parc-titulo" class="form-sel">
+        <option value="Parcial 1">Parcial 1</option>
+        <option value="Parcial 2">Parcial 2</option>
+        <option value="Parcial 3">Parcial 3</option>
+        <option value="Recuperatorio">Recuperatorio</option>
+        <option value="Final">Final</option>
+        <option value="Coloquio">Coloquio</option>
+        <option value="Trabajo Práctico">Trabajo Práctico</option>
+      </select>
     </div>
-    <div class="form-campo" style="display:flex;align-items:flex-end">
-      <button class="btn-submit" style="margin-top:0;height:42px" onclick="submitParcial()">Guardar</button>
+    <div class="form-campo">
+      <label class="form-lbl">Fecha (dd/mm/aaaa)</label>
+      <input id="parc-fecha" class="form-inp" type="date" placeholder="dd/mm/aaaa">
     </div>
   </div>
-  <p style="font-size:.68rem;color:var(--dim);margin-top:8px;text-align:center">
-    Se agrega al historial de parciales de la materia elegida
+  <button class="btn-submit" style="margin-top:4px" onclick="submitEvento()">Agregar al calendario</button>
+  <p style="font-size:.68rem;color:var(--dim);margin-top:6px;text-align:center">
+    Aparece en el calendario al regenerar la página
   </p>
 </div></div></div>
-<div class="bpage" id="pg-asistencias"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Asistencias</span><span class="pg-count">1 en curso</span></div><div id="sync-badge" class="sync-badge sync-ok">✓ Todo sincronizado</div><div class="asist-nota"><strong>¿Cómo funciona?</strong> Marcá cada clase —presente o ausente— y el registro queda guardado en el celular aunque la compu esté apagada. Cuando la compu esté activa, todo se sincroniza automático.</div><div class="asist-card" data-mat="manuel">
+<div class="bpage" id="pg-asistencias"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Asistencias</span><span class="pg-count">3 en curso</span></div><div id="sync-badge" class="sync-badge sync-ok">✓ Todo sincronizado</div><div class="asist-nota"><strong>¿Cómo funciona?</strong> Marcá cada clase —presente o ausente— y el registro queda guardado en el celular aunque la compu esté apagada. Cuando la compu esté activa, todo se sincroniza automático.</div><div class="asist-card" data-mat="manuel">
   <div class="asist-top">
     <div class="asist-pct " id="pct-manuel">—</div>
     <div class="asist-info">
@@ -1610,8 +1692,34 @@ button{font:inherit;cursor:pointer;border:none;background:none}
     <button class="asist-btn btn-pres" onclick="marcarAsist('manuel',true,this)">✓&nbsp;Presente</button>
     <button class="asist-btn btn-aus"  onclick="marcarAsist('manuel',false,this)">✗&nbsp;Ausente</button>
   </div>
+</div><div class="asist-card" data-mat="manuel5">
+  <div class="asist-top">
+    <div class="asist-pct " id="pct-manuel5">—</div>
+    <div class="asist-info">
+      <div class="asist-nom">Manuel5</div>
+      <div class="asist-stats" id="stats-manuel5">0&nbsp;pres · 0&nbsp;aus · 0&nbsp;clases</div>
+    </div>
+  </div>
+  <div class="ah-hist" id="hist-manuel5"><span class="ah-empty">Sin registros aún — marcá tu primera clase</span></div>
+  <div class="asist-btns">
+    <button class="asist-btn btn-pres" onclick="marcarAsist('manuel5',true,this)">✓&nbsp;Presente</button>
+    <button class="asist-btn btn-aus"  onclick="marcarAsist('manuel5',false,this)">✗&nbsp;Ausente</button>
+  </div>
+</div><div class="asist-card" data-mat="manuel6">
+  <div class="asist-top">
+    <div class="asist-pct " id="pct-manuel6">—</div>
+    <div class="asist-info">
+      <div class="asist-nom">Manuel6</div>
+      <div class="asist-stats" id="stats-manuel6">0&nbsp;pres · 0&nbsp;aus · 0&nbsp;clases</div>
+    </div>
+  </div>
+  <div class="ah-hist" id="hist-manuel6"><span class="ah-empty">Sin registros aún — marcá tu primera clase</span></div>
+  <div class="asist-btns">
+    <button class="asist-btn btn-pres" onclick="marcarAsist('manuel6',true,this)">✓&nbsp;Presente</button>
+    <button class="asist-btn btn-aus"  onclick="marcarAsist('manuel6',false,this)">✗&nbsp;Ausente</button>
+  </div>
 </div></div></div>
-<div class="bpage" id="pg-promedios"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Promedios</span></div><div class="prom-resumen"><div class="prom-stat"><div class="pn">8.38</div><div class="pl">Promedio</div></div><div class="prom-stat"><div class="pn">21</div><div class="pl">Con nota</div></div><div class="prom-stat"><div class="pn">20</div><div class="pl">Aprobadas</div></div></div><div class="pbar-lista"><div class="pbar-anio">1º Año</div><div class="pbar-item"><div class="pbar-label">Analisis Matematico 1</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:100%"><span class="pbar-nota">10</span></div></div></div><div class="pbar-item"><div class="pbar-label">Fisica 1</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Taller Y Laboratorio</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Algebra Lineal</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:80%"><span class="pbar-nota">8</span></div></div></div><div class="pbar-item"><div class="pbar-label">Quimica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:80%"><span class="pbar-nota">8</span></div></div></div><div class="pbar-item"><div class="pbar-label">Quimica Organica Y Biologica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:70%"><span class="pbar-nota">7</span></div></div></div><div class="pbar-item"><div class="pbar-label">Sistemas De Representacion</div><div class="pbar-track"><div class="pbar-fill bar-warn" style="width:60%"><span class="pbar-nota">6</span></div></div></div><div class="pbar-anio">2º Año</div><div class="pbar-item"><div class="pbar-label">Analisis Matematico 3</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:100%"><span class="pbar-nota">10</span></div></div></div><div class="pbar-item"><div class="pbar-label">Anatomia Para Ingenieros</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Electronica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Estatica Y Resistenca De Los Materiales</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Histologia Para Ingenieros</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Informatica Y Calculo Numerico</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Probabilidad Y Estadistica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Analisis Matematico 2</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:70%"><span class="pbar-nota">7</span></div></div></div><div class="pbar-item"><div class="pbar-label">Fisica 2</div><div class="pbar-track"><div class="pbar-fill bar-warn" style="width:60%"><span class="pbar-nota">6</span></div></div></div><div class="pbar-anio">3º Año</div><div class="pbar-item"><div class="pbar-label">Electrotecnia General Y Maquinas Electricas</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Electronica Digital 1</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Fisiologia Humana</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Senales Y Sistemas</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-anio">4º Año</div><div class="pbar-item"><div class="pbar-label">Manuel</div><div class="pbar-track"><div class="pbar-fill bar-warn" style="width:60%"><span class="pbar-nota">6</span></div></div></div></div></div></div>
+<div class="bpage" id="pg-promedios"><div class="pg-inner"><div class="pg-header"><button class="btn-back" onclick="goPage('pg-index')">← Índice</button><span class="pg-title">Promedios</span></div><div class="prom-resumen"><div class="prom-stat"><div class="pn">8.46</div><div class="pl">Prom. aprobadas</div></div><div class="prom-stat"><div class="pn">20</div><div class="pl">Aprobadas</div></div><div class="prom-stat"><div class="pn">3</div><div class="pl">En curso</div></div></div><div class="pbar-lista"><div class="pbar-anio">1º Año</div><div class="pbar-item"><div class="pbar-label">Analisis Matematico 1</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:100%"><span class="pbar-nota">10</span></div></div></div><div class="pbar-item"><div class="pbar-label">Fisica 1</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Taller Y Laboratorio</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Algebra Lineal</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:80%"><span class="pbar-nota">8</span></div></div></div><div class="pbar-item"><div class="pbar-label">Quimica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:80%"><span class="pbar-nota">8</span></div></div></div><div class="pbar-item"><div class="pbar-label">Quimica Organica Y Biologica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:70%"><span class="pbar-nota">7</span></div></div></div><div class="pbar-item"><div class="pbar-label">Sistemas De Representacion</div><div class="pbar-track"><div class="pbar-fill bar-warn" style="width:60%"><span class="pbar-nota">6</span></div></div></div><div class="pbar-anio">2º Año</div><div class="pbar-item"><div class="pbar-label">Analisis Matematico 3</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:100%"><span class="pbar-nota">10</span></div></div></div><div class="pbar-item"><div class="pbar-label">Anatomia Para Ingenieros</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Electronica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Estatica Y Resistenca De Los Materiales</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Histologia Para Ingenieros</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Informatica Y Calculo Numerico</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Probabilidad Y Estadistica</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Analisis Matematico 2</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:70%"><span class="pbar-nota">7</span></div></div></div><div class="pbar-item"><div class="pbar-label">Fisica 2</div><div class="pbar-track"><div class="pbar-fill bar-warn" style="width:60%"><span class="pbar-nota">6</span></div></div></div><div class="pbar-anio">3º Año</div><div class="pbar-item"><div class="pbar-label">Electrotecnia General Y Maquinas Electricas</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Fisiologia Humana</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Senales Y Sistemas</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-item"><div class="pbar-label">Electronica Digital 1</div><div class="pbar-track"><div class="pbar-fill bar-ok" style="width:90%"><span class="pbar-nota">9</span></div></div></div><div class="pbar-anio">4º Año</div><div class="pbar-item"><div class="pbar-label">Manuel</div><div class="pbar-track"><div class="pbar-fill bar-warn" style="width:60%"><span class="pbar-nota">6</span></div></div></div><div class="pbar-anio">5º Año</div><div class="pbar-item"><div class="pbar-label">Manuel5</div><div class="pbar-track"><div class="pbar-fill bar-dim" style="width:8%"><span class="pbar-nota" style="font-size:.6rem;white-space:nowrap">en curso</span></div></div></div><div class="pbar-anio">Optativa</div><div class="pbar-item"><div class="pbar-label">Manuel6</div><div class="pbar-track"><div class="pbar-fill bar-dim" style="width:8%"><span class="pbar-nota" style="font-size:.6rem;white-space:nowrap">en curso</span></div></div></div></div></div></div>
 
       <!-- ── Agregar materia ── -->
       <div class="bpage" id="pg-agregar">
@@ -1647,13 +1755,13 @@ button{font:inherit;cursor:pointer;border:none;background:none}
             <div class="form-row">
               <div class="form-campo">
                 <label class="form-lbl">Estado</label>
-                <select id="ag-estado" class="form-sel">
+                <select id="ag-estado" class="form-sel" onchange="agEstadoChange(this.value)">
                   <option value="en_curso">En Curso</option>
                   <option value="aprobada">Aprobada</option>
                   <option value="desaprobada">Desaprobada</option>
                 </select>
               </div>
-              <div class="form-campo" id="ag-nota-wrap">
+              <div class="form-campo" id="ag-nota-wrap" style="display:none">
                 <label class="form-lbl" id="ag-nota-lbl">Nota del Examen Final</label>
                 <input id="ag-nota" class="form-inp" type="number" min="0" max="10" step="0.5" placeholder="—">
               </div>
@@ -2319,7 +2427,7 @@ window.marcarAsist = marcarAsist;
 var SUPA_URL_CRUD = 'https://hufflxvocbfbhrayylad.supabase.co';
 var SUPA_KEY_CRUD = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imh1ZmZseHZvY2JmYmhyYXl5bGFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODI0OTc2ODUsImV4cCI6MjA5ODA3MzY4NX0.MVqKYtuKeOlT4jgx13sTT2lZ2tuzChEmLLQMCe1xzG4';
 var USERNAME_CRUD = 'manufreytes';
-var _datosCache   = {"ALGEBRA_LINEAL": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 8], "final": 8, "año": "1º Año"}, "ANATOMIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [], "final": 9, "año": "2º Año"}, "ANALISIS_MATEMATICO_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 10], "final": 10, "año": "1º Año"}, "ANALISIS_MATEMATICO_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 4], "final": 7, "año": "2º Año"}, "ANALISIS_MATEMATICO_3": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9], "final": 10, "año": "2º Año"}, "ELECTROTECNIA_GENERAL_Y_MAQUINAS_ELECTRICAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 9, "año": "3º Año"}, "ELECTRONICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8], "final": 9, "año": "2º Año"}, "ELECTRONICA_DIGITAL_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 8.8, "año": "3º Año"}, "ESTATICA_Y_RESISTENCA_DE_LOS_MATERIALES": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8.3], "final": 9, "año": "2º Año"}, "FISIOLOGIA_HUMANA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 9, "año": "3º Año"}, "FISICA_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 7, 4, 10], "final": 9, "año": "1º Año"}, "FISICA_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9, 8, 7], "final": 6, "año": "2º Año"}, "HISTOLOGIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9, 9], "final": 9, "año": "2º Año"}, "INFORMATICA_Y_CALCULO_NUMERICO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8, 10, 10, 10], "final": 9, "año": "2º Año"}, "PROBABILIDAD_Y_ESTADISTICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9, "año": "2º Año"}, "QUIMICA_ORGANICA_Y_BIOLOGICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [5, 8, 7], "final": 7, "año": "1º Año"}, "QUIMICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [7, 9], "final": 8, "año": "1º Año"}, "SENALES_Y_SISTEMAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9, "año": "3º Año"}, "SISTEMAS_DE_REPRESENTACION": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [4, 6], "final": 6, "año": "1º Año"}, "TALLER_Y_LABORATORIO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 8.5, "año": "1º Año"}, "FISICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INGLES": {"tipo": "Sin Nota", "estado": "aprobada", "año": "2º Año"}, "MATEMATICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INTRODUCCION A LA VIDA UNIVERSITARIA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "manuel": {"año": "4º Año", "tipo": "Promocional", "final": 0, "estado": "en_curso", "parciales": [6], "asistencias": {}, "nota_promocion": 8}};   /* datos actuales inyectados por Python */
+var _datosCache   = {"ALGEBRA_LINEAL": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 8], "final": 8, "año": "1º Año"}, "ANATOMIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [], "final": 9, "año": "2º Año"}, "ANALISIS_MATEMATICO_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 10], "final": 10, "año": "1º Año"}, "ANALISIS_MATEMATICO_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 4], "final": 7, "año": "2º Año"}, "ANALISIS_MATEMATICO_3": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9], "final": 10, "año": "2º Año"}, "ELECTROTECNIA_GENERAL_Y_MAQUINAS_ELECTRICAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 9, "año": "3º Año"}, "ELECTRONICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8], "final": 9, "año": "2º Año"}, "ELECTRONICA_DIGITAL_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 8.8, "año": "3º Año"}, "ESTATICA_Y_RESISTENCA_DE_LOS_MATERIALES": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8.3], "final": 9, "año": "2º Año"}, "FISIOLOGIA_HUMANA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9], "final": 9, "año": "3º Año"}, "FISICA_1": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 7, 4, 10], "final": 9, "año": "1º Año"}, "FISICA_2": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 9, 8, 7], "final": 6, "año": "2º Año"}, "HISTOLOGIA_PARA_INGENIEROS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 9, 9], "final": 9, "año": "2º Año"}, "INFORMATICA_Y_CALCULO_NUMERICO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [10, 8, 10, 10, 10], "final": 9, "año": "2º Año"}, "PROBABILIDAD_Y_ESTADISTICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9, "año": "2º Año"}, "QUIMICA_ORGANICA_Y_BIOLOGICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [5, 8, 7], "final": 7, "año": "1º Año"}, "QUIMICA": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [7, 9], "final": 8, "año": "1º Año"}, "SENALES_Y_SISTEMAS": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [9, 9], "final": 9, "año": "3º Año"}, "SISTEMAS_DE_REPRESENTACION": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [4, 6], "final": 6, "año": "1º Año"}, "TALLER_Y_LABORATORIO": {"tipo": "Final", "estado": "aprobada", "nota_promocion": 7.0, "parciales": [8, 10], "final": 8.5, "año": "1º Año"}, "FISICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INGLES": {"tipo": "Sin Nota", "estado": "aprobada", "año": "2º Año"}, "MATEMATICA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "INTRODUCCION A LA VIDA UNIVERSITARIA": {"tipo": "Sin Nota", "estado": "aprobada", "año": "1º Año"}, "manuel": {"año": "4º Año", "tipo": "Promocional", "final": 0, "estado": "en_curso", "parciales": [6], "asistencias": {}, "nota_promocion": 8}, "manuel5": {"año": "5º Año", "tipo": "Final", "final": 0, "estado": "en_curso", "parciales": [], "asistencias": {}, "nota_promocion": 7}, "manuel6": {"año": "Optativa", "tipo": "Final", "final": 0, "estado": "en_curso", "parciales": [], "asistencias": {}, "nota_promocion": 7}};   /* datos actuales inyectados por Python */
 
 function _supaHeaders(){
   return {
@@ -2343,19 +2451,28 @@ function _guardarEnSupabase(datos, callback){
   }).catch(function(){ if(callback) callback(false); });
 }
 
-/* ── Visibilidad dinámica del tipo en agregar ── */
-function agTipoChange(tipo){
-  var wrapProm  = document.getElementById('ag-prom-wrap');
-  var wrapNota  = document.getElementById('ag-nota-wrap');
-  var wrapParc  = document.getElementById('ag-parc-wrap');
-  var lblNota   = document.getElementById('ag-nota-lbl');
-  var sinNota   = tipo === 'Sin Nota';
-  wrapNota.style.display  = sinNota ? 'none' : '';
-  wrapParc.style.display  = sinNota ? 'none' : '';
-  wrapProm.style.display  = (tipo === 'Promocional' || tipo === 'Coloquio') ? '' : 'none';
-  if(tipo === 'Promocional') lblNota.textContent = 'Nota Final (vacío = promedio parciales)';
-  else if(tipo === 'Coloquio') lblNota.textContent = 'Nota del Coloquio';
+/* ── Visibilidad dinámica (tipo + estado en agregar) ── */
+function _agActualizarNota(){
+  var tipo   = document.getElementById('ag-tipo').value;
+  var estado = document.getElementById('ag-estado').value;
+  var wrapNota = document.getElementById('ag-nota-wrap');
+  var lblNota  = document.getElementById('ag-nota-lbl');
+  /* Nota final: solo si NO está en curso Y NO es Promocional */
+  var mostrarNota = (estado !== 'en_curso') && (tipo !== 'Promocional');
+  wrapNota.style.display = mostrarNota ? '' : 'none';
+  if(tipo === 'Coloquio') lblNota.textContent = 'Nota del Coloquio';
   else lblNota.textContent = 'Nota del Examen Final';
+}
+function agTipoChange(tipo){
+  var wrapProm = document.getElementById('ag-prom-wrap');
+  var wrapParc = document.getElementById('ag-parc-wrap');
+  var sinNota  = tipo === 'Sin Nota';
+  wrapParc.style.display = sinNota ? 'none' : '';
+  wrapProm.style.display = (tipo === 'Promocional' || tipo === 'Coloquio') ? '' : 'none';
+  _agActualizarNota();
+}
+function agEstadoChange(estado){
+  _agActualizarNota();
 }
 
 /* ── Agregar materia ── */
@@ -2496,27 +2613,31 @@ function _popularSelectMaterias(){
   });
 }
 
-/* ── Guardar parcial ── */
-function submitParcial(){
-  var slug = document.getElementById('parc-materia').value;
-  var nota = parseFloat(document.getElementById('parc-nota').value);
-  if(!slug){ _msgParcial('Elegí una materia.','err'); return; }
-  if(isNaN(nota) || nota < 0 || nota > 10){ _msgParcial('Nota inválida (0–10).','err'); return; }
+/* ── Agregar evento al calendario ── */
+function submitEvento(){
+  var slug   = document.getElementById('parc-materia').value;
+  var titulo = document.getElementById('parc-titulo').value;
+  var fechaRaw = document.getElementById('parc-fecha').value; /* YYYY-MM-DD desde <input type=date> */
+  if(!slug)     { _msgParcial('Elegí una materia.','err'); return; }
+  if(!fechaRaw) { _msgParcial('Ingresá la fecha.','err'); return; }
+  /* Convertir de YYYY-MM-DD a dd/mm/YYYY (formato que usa la app) */
+  var p = fechaRaw.split('-');
+  var fechaApp = p[2] + '/' + p[1] + '/' + p[0];
   if(!_datosCache[slug]) _datosCache[slug] = {};
-  if(!Array.isArray(_datosCache[slug].parciales)) _datosCache[slug].parciales = [];
-  _datosCache[slug].parciales.push(nota);
+  if(!Array.isArray(_datosCache[slug].calendario)) _datosCache[slug].calendario = [];
+  var evento = { titulo: titulo, fecha: fechaApp };
+  _datosCache[slug].calendario.push(evento);
   var btn = document.querySelector('.parc-section .btn-submit');
   btn.disabled = true; btn.textContent = 'Guardando…';
   _guardarEnSupabase(_datosCache, function(ok){
-    btn.disabled = false; btn.textContent = 'Guardar';
+    btn.disabled = false; btn.textContent = 'Agregar al calendario';
     if(ok){
       var nom = slug.replace(/_/g,' ').toLowerCase()
                     .replace(/\b\w/g,function(c){return c.toUpperCase();});
-      _msgParcial('✓ Parcial ' + nota + ' cargado en ' + nom,'ok');
-      document.getElementById('parc-nota').value = '';
+      _msgParcial('✓ ' + titulo + ' · ' + fechaApp + ' → ' + nom,'ok');
+      document.getElementById('parc-fecha').value = '';
     } else {
-      /* Revertir si falla */
-      _datosCache[slug].parciales.pop();
+      _datosCache[slug].calendario.pop();
       _msgParcial('Error al guardar. Verificá tu conexión.','err');
     }
   });
@@ -2535,10 +2656,11 @@ document.addEventListener('DOMContentLoaded', function(){
 /* ── Exponer al scope global ── */
 window.submitAgregar    = submitAgregar;
 window.submitEditar     = submitEditar;
-window.submitParcial    = submitParcial;
+window.submitEvento     = submitEvento;
 window.abrirModal       = abrirModal;
 window.cerrarModal      = cerrarModal;
 window.agTipoChange     = agTipoChange;
+window.agEstadoChange   = agEstadoChange;
 </script>
 <script>
 if('serviceWorker' in navigator){
