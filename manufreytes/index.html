@@ -673,7 +673,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <div class="cover-seal">🎓</div>
         <div class="cover-line"></div>
         <h1 class="cover-title">Libreta<br>Universitaria</h1>
-        <p class="cover-sub">29 jun 2026 · 18:38</p>
+        <p class="cover-sub">29 jun 2026 · 18:46</p>
         <div class="cover-line"></div>
         <div class="cover-stats">
           <div class="cstat"><div class="cn" data-count="27">0</div><div class="cl">Total</div></div>
@@ -2563,9 +2563,10 @@ function submitEditar(){
     btn.disabled = false; btn.textContent = 'Guardar cambios';
     var msg = document.getElementById('msg-editar');
     if(ok){
-      msg.textContent='¡Guardado! Se sincroniza cuando abras la app.';
+      msg.textContent='¡Guardado!';
       msg.className='form-msg ok';
-      setTimeout(cerrarModal, 1800);
+      _reRenderPromedios();   /* actualizar barras en vivo */
+      setTimeout(cerrarModal, 1400);
     } else {
       msg.textContent='Error al guardar. Verificá tu conexión.';
       msg.className='form-msg err';
@@ -2584,30 +2585,112 @@ function _syncDesdeSupabase(){
     .then(function(r){ return r.ok ? r.json() : null; })
     .then(function(rows){
       if(rows && rows[0] && rows[0].datos){
-        /* Mezclar: datos de Supabase son los más recientes */
         var remoto = rows[0].datos;
         Object.keys(remoto).forEach(function(k){ _datosCache[k] = remoto[k]; });
         _popularSelectMaterias();
+        _reRenderPromedios();
       }
     })
     .catch(function(){});
 }
 
-/* ── Popular select de materias en "Cargar Parcial" ── */
+/* ── Calcular nota de una materia igual que Python ── */
+function _calcularNota(info){
+  var tipo     = info.tipo || 'Final';
+  var parciales = info.parciales || [];
+  var final    = parseFloat(info.final) || 0;
+  var notaProm = parseFloat(info.nota_promocion) || 7;
+  var promParc = parciales.length
+    ? parciales.reduce(function(a,b){return a+b;},0) / parciales.length : 0;
+  if(tipo === 'Promocional'){
+    if(promParc >= notaProm) return Math.round(promParc);
+    return final > 0 ? Math.round(final) : Math.round(promParc);
+  }
+  return final > 0 ? Math.round(final) : Math.round(promParc);
+}
+
+/* ── Re-renderizar barras de promedios desde _datosCache ── */
+function _reRenderPromedios(){
+  var pg = document.getElementById('pg-promedios');
+  if(!pg) return;
+  var lista   = pg.querySelector('.pbar-lista');
+  var resumen = pg.querySelector('.prom-resumen');
+  if(!lista) return;
+
+  var grupos = {};
+  var sumaProm=0, cantProm=0, cantAprobadas=0, cantEnCurso=0;
+  Object.keys(_datosCache).forEach(function(slug){
+    var info = _datosCache[slug];
+    if((info.tipo||'') === 'Sin Nota') return;
+    var anio = info.año || 'Otros';
+    if(!grupos[anio]) grupos[anio] = [];
+    grupos[anio].push({slug:slug, info:info});
+    var estado = (info.estado||'en_curso').toLowerCase();
+    var nota = _calcularNota(info);
+    if(estado === 'aprobada'){
+      cantAprobadas++;
+      if(nota > 0){ sumaProm += nota; cantProm++; }
+    } else if(estado === 'en_curso'){
+      cantEnCurso++;
+    }
+  });
+
+  var anios = Object.keys(grupos).sort(function(a,b){
+    var n = function(s){ var m=s.match(/\d+/); return m?parseInt(m[0]):99; };
+    return n(a)-n(b);
+  });
+  var html = '';
+  anios.forEach(function(anio){
+    html += '<div class="pbar-anio">' + anio + '</div>';
+    var mats = grupos[anio].slice().sort(function(a,b){
+      return _calcularNota(b.info) - _calcularNota(a.info);
+    });
+    mats.forEach(function(m){
+      var nota = _calcularNota(m.info);
+      var label = m.slug.replace(/_/g,' ').toLowerCase()
+                        .replace(/\b\w/g,function(c){return c.toUpperCase();});
+      var barra;
+      if(nota > 0){
+        var pct = Math.min(nota*10, 100);
+        var cls = nota>=7?'bar-ok':nota>=4?'bar-warn':'bar-bad';
+        barra = '<div class="pbar-fill '+cls+'" style="width:'+pct+'%">'
+              + '<span class="pbar-nota">'+nota+'</span></div>';
+      } else {
+        barra = '<div class="pbar-fill bar-dim" style="width:8%">'
+              + '<span class="pbar-nota" style="font-size:.6rem;white-space:nowrap">en curso</span></div>';
+      }
+      html += '<div class="pbar-item"><div class="pbar-label">'+label+'</div>'
+            + '<div class="pbar-track">'+barra+'</div></div>';
+    });
+  });
+  lista.innerHTML = html;
+
+  if(resumen){
+    var promStr = cantProm > 0 ? (sumaProm/cantProm).toFixed(2) : '—';
+    resumen.innerHTML =
+      '<div class="prom-stat"><div class="pn">'+promStr+'</div><div class="pl">Prom. aprobadas</div></div>'
+    + '<div class="prom-stat"><div class="pn">'+cantAprobadas+'</div><div class="pl">Aprobadas</div></div>'
+    + '<div class="prom-stat"><div class="pn">'+cantEnCurso+'</div><div class="pl">En curso</div></div>';
+  }
+}
+
+/* ── Popular select de materias en calendario (solo en curso) ── */
 function _popularSelectMaterias(){
   var sel = document.getElementById('parc-materia');
   if(!sel) return;
   var actual = sel.value;
   sel.innerHTML = '<option value="">— elegí una materia —</option>';
   Object.keys(_datosCache).sort().forEach(function(slug){
-    var info = _datosCache[slug];
-    if((info.tipo || '') === 'Sin Nota') return;
+    var info   = _datosCache[slug];
+    var tipo   = info.tipo   || '';
+    var estado = (info.estado || '').toLowerCase();
+    if(tipo === 'Sin Nota') return;
+    if(estado !== 'en_curso') return;          /* solo materias en curso */
     var label = slug.replace(/_/g,' ').toLowerCase()
                     .replace(/\b\w/g, function(c){ return c.toUpperCase(); });
-    var tipo  = info.tipo ? ' (' + info.tipo + ')' : '';
     var opt   = document.createElement('option');
     opt.value = slug;
-    opt.textContent = label + tipo;
+    opt.textContent = label;
     if(slug === actual) opt.selected = true;
     sel.appendChild(opt);
   });
