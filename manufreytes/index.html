@@ -375,7 +375,9 @@ button{font:inherit;cursor:pointer;border:none;background:none}
 .fhint{font-size:.66rem;color:var(--dim);margin-top:auto;padding-top:8px;animation:fp 2.5s ease-in-out infinite}
 @keyframes fp{0%,100%{opacity:.3}50%{opacity:.65}}
 
-.back{transform:rotateY(180deg);align-items:flex-start}
+.back{transform:rotateY(180deg);align-items:flex-start;pointer-events:none}
+.card-flip.flipped .face.back{pointer-events:auto}
+.card-flip.flipped .face.front{pointer-events:none}
 .back-top{display:flex;align-items:flex-start;justify-content:space-between;gap:8px;width:100%}
 .back-top .card-nom{font-size:.84rem;text-align:left}
 .sep{width:100%;height:1px;background:var(--border);margin:10px 0}
@@ -695,7 +697,7 @@ button{font:inherit;cursor:pointer;border:none;background:none}
         <div class="cover-seal">🎓</div>
         <div class="cover-line"></div>
         <h1 class="cover-title">Cursus</h1>
-        <p class="cover-sub">30 jun 2026 · 22:19</p>
+        <p class="cover-sub">30 jun 2026 · 22:37</p>
         <div class="cover-line"></div>
         <div class="cover-stats">
           <div class="cstat"><div class="cn" data-count="29">0</div><div class="cl">Total</div></div>
